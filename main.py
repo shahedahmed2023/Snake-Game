@@ -28,13 +28,13 @@ while is_game_on:
       snake.grow()
    # wall
    if snake.all_snake[0].xcor() > 280 or snake.all_snake[0].xcor() < -280 or snake.all_snake[0].ycor() > 280 or snake.all_snake[0].ycor() < -280:
-      is_game_on = False
-      score.game_over()
+      score.reset()
+      snake.reset()
 
    for segment in snake.all_snake[1:]:
         if snake.all_snake[0].distance(segment) < 15:
-            is_game_on = False
-            score.game_over()
+            score.reset()
+            snake.reset()
 
 
 

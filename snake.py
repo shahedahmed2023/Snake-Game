@@ -9,6 +9,11 @@ class Snake:
     def create_snake(self):
         for postion in STARTING_POSITIONS:
           self.add_snake_piece(postion)
+    def reset(self):
+        for seg in self.all_snake:
+            seg.goto(1000,1000)
+        self.all_snake.clear()
+        self.create_snake()
             
     def add_snake_piece(self,distance):
         tim = Turtle('square')
